@@ -1,4 +1,4 @@
-import auth from "../app/middleware";
+import auth from "@/app/middleware";
 import { LoginButton } from "./LoginButton";
 import { LogoutButton } from "./LogoutButton";
 
@@ -7,7 +7,7 @@ export async function UserInfo() {
 
   return (
     <div>
-      {session ? (
+      {session?.user ? (
         <div>
           {session.user.name}{" "}
           <span className="text-xs text-zinc-400 mr-3">#{session.user.id}</span>
