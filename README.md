@@ -46,3 +46,12 @@ The project is a work in progress and is not yet complete.
 - [ ] User following
 - [ ] User feed (posts from users you follow)
 - [ ] User flair
+
+## Reflection
+
+For this project I met the requirement of deploying to vercel, I had some initial challanges during this assignment how ever the initial attempt to run the app in local host and the first attempt to deploy helped to point me in the right direction as to where the main issue was which was in the UserInfo.jsx.
+this presented me with an error of cannot read properties undefined. after looking into potential fixes for this issue I was lead to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator as a possible fix as with out the ternary operator the session was returning null which was causing the issues once I had implemented this change and setup the database the site seemed to deploy successfully.
+
+I then wanted to ensure the log in worked as when I attempted to log in on the deployed site I was met with an error that directed me to look at the logs in vercel as I didnt quite understand what the errors where I asked chatgpt to explain what the error was with out giving me any code.
+
+after the explanation I was able to find the error which was that the env.local and the enviroment variables on vercel where missing the NEXTAUTH_URL and the AUTH_SECRET needed to be NEXTAUTH_SECRET once I had added the nextauth url and changed the AUTH_SECRET the sign in now works.
